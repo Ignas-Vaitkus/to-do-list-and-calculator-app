@@ -1,1 +1,8 @@
-.Item {}
+.Item {
+  display: flex;
+  align-items: center;
+}
+
+.Text {
+  flex-grow: 1;
+}

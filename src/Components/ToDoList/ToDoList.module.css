@@ -1,1 +1,9 @@
-.ToDoList {}
+.ToDoList {
+  width: 425px;
+}
+
+.InputArea {
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 42px;
+}
