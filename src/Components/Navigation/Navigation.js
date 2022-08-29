@@ -22,14 +22,14 @@ const Navigation = () => {
       <BottomNavigation value={value} onChange={handleChange}>
         <BottomNavigationAction
           component={Link}
-          to={`${repoName}/to-do-list`}
+          to="/to-do-list"
           label="To Do List"
           value="to-do-list"
           icon={<FormatListBulletedIcon />}
         />
         <BottomNavigationAction
           component={Link}
-          to={`${repoName}/calculator`}
+          to="/calculator"
           label="Calculator"
           value="calculator"
           icon={<CalculateIcon />}
