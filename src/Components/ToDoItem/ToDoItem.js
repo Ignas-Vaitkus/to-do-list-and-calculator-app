@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./ToDoItem.module.css";
-import { Button, TextField } from "@mui/material";
+import { IconButton, TextField } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 import { Delete } from "@mui/icons-material";
 
@@ -9,21 +9,29 @@ const Item = (props) => {
   return (
     <div className={styles.Item}>
       <Checkbox />
-      <div className={styles.Text}>{props.itemName}</div>
-      <Button
-        style={{ minWidth: "auto" }}
-        onClick={() => props.deleteHandler(props.id)}
+      <TextField
+        className={styles.Text}
+        variant="standard"
+        value={props.itemName}
+        onChange={(e) => props.editHandler(e, props.id)}
+      />
+      <IconButton
+        color="error"
+        onClick={(e) => {
+          props.deleteHandler(props.id);
+        }}
       >
         <Delete />
-      </Button>
+      </IconButton>
     </div>
   );
 };
 
 Item.propTypes = {
-  deleteHandler: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
-  itemName: PropTypes.string,
+  itemName: PropTypes.string.isRequired,
+  editHandler: PropTypes.func.isRequired,
+  deleteHandler: PropTypes.func.isRequired,
 };
 
 export default Item;

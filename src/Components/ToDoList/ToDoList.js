@@ -1,45 +1,44 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ToDoList.module.css";
 import ToDoItem from "../ToDoItem/ToDoItem";
 import { TextField, IconButton, Paper } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
 const ToDoList = () => {
-  const [items, setItems] = useState([
-    { name: "Task 1" },
-    { name: "Task 2" },
-    { name: "Task 3" },
-  ]);
+  const [defaultItems] = useState([]);
+  const [items, setItems] = useState(defaultItems);
 
   const [newItem, setNewItem] = useState("");
-  const count = useRef(0);
-
-  useEffect(() => {
-    count.current = count.current + 1;
-  });
 
   useEffect(() => {
     const lsItems = localStorage.getItem("toDoItems");
-    if (!lsItems) localStorage.setItem("toDoItems", JSON.stringify(items));
+    if (!lsItems)
+      localStorage.setItem("toDoItems", JSON.stringify(defaultItems));
     else setItems(JSON.parse(lsItems));
-  }, []);
+    console.log("init");
+  }, [defaultItems]);
 
   useEffect(() => {
     localStorage.setItem("toDoItems", JSON.stringify(items));
-    console.log("Ls");
+    console.log("update local storage");
   }, [items]);
 
   const inputHandler = (e) => {
     setNewItem(e.target.value);
   };
 
-  const addHandler = (e) => {
+  const addItemHandler = (e) => {
     e.preventDefault();
-
-    setItems([...items, { name: newItem }]);
-
+    setItems([...items, newItem]);
     console.log("Add");
     setNewItem("");
+  };
+
+  const editHandler = (e, idx) => {
+    const newItems = items.map((element, index) =>
+      index === idx ? e.target.value : element
+    );
+    setItems(newItems);
   };
 
   const deleteHandler = (index) => {
@@ -49,10 +48,10 @@ const ToDoList = () => {
 
   return (
     <div className={styles.ToDoList}>
-      <form onSubmit={addHandler}>
+      <form onSubmit={addItemHandler}>
         <Paper elevation={2} className={styles.InputArea}>
           <TextField
-            placeholder="Write your task..."
+            placeholder="Write your task here..."
             variant="standard"
             style={{ flexGrow: "1" }}
             onChange={inputHandler}
@@ -67,8 +66,9 @@ const ToDoList = () => {
         <ToDoItem
           key={idx}
           id={idx}
+          itemName={item}
+          editHandler={editHandler}
           deleteHandler={deleteHandler}
-          itemName={item.name}
         />
       ))}
     </div>
