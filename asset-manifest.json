@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/to-do-list-and-calculator-app/static/css/main.3fdb8763.css",
-    "main.js": "/to-do-list-and-calculator-app/static/js/main.6a8a1cee.js",
+    "main.js": "/to-do-list-and-calculator-app/static/js/main.e2c1ec8d.js",
     "index.html": "/to-do-list-and-calculator-app/index.html",
     "main.3fdb8763.css.map": "/to-do-list-and-calculator-app/static/css/main.3fdb8763.css.map",
-    "main.6a8a1cee.js.map": "/to-do-list-and-calculator-app/static/js/main.6a8a1cee.js.map"
+    "main.e2c1ec8d.js.map": "/to-do-list-and-calculator-app/static/js/main.e2c1ec8d.js.map"
   },
   "entrypoints": [
     "static/css/main.3fdb8763.css",
-    "static/js/main.6a8a1cee.js"
+    "static/js/main.e2c1ec8d.js"
   ]
 }
