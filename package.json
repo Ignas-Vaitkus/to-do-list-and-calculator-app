@@ -1,5 +1,5 @@
 {
-  "homepage": "http://{username}.github.io/{repo-name}",
+  "homepage": "http://shpunk.github.io/to-do-list-and-calculator-app",
   "name": "to-do-list-and-calculator-app",
   "version": "0.1.0",
   "private": true,
