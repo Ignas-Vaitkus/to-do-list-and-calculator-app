@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styles from "./ToDoItem.module.css";
 import { IconButton, TextField } from "@mui/material";
