@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [value, setValue] = useState("to-do-list");
+  const repoName = "to-do-list-and-calculator-app";
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -21,14 +22,14 @@ const Navigation = () => {
       <BottomNavigation value={value} onChange={handleChange}>
         <BottomNavigationAction
           component={Link}
-          to="/to-do-list"
+          to={`${repoName}/to-do-list`}
           label="To Do List"
           value="to-do-list"
           icon={<FormatListBulletedIcon />}
         />
         <BottomNavigationAction
           component={Link}
-          to="/calculator"
+          to={`${repoName}/calculator`}
           label="Calculator"
           value="calculator"
           icon={<CalculateIcon />}

@@ -5,13 +5,22 @@ import Calculator from "./Components/Calculator/Calculator";
 import Navigation from "./Components/Navigation/Navigation";
 
 function App() {
+  const repoName = "to-do-list-and-calculator-app";
+
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/to-do-list" />} />
-          <Route path="/to-do-list" element={<ToDoList />} />
-          <Route path="/calculator" element={<Calculator />} />
+          <Route
+            path="/"
+            element={<Navigate to={`/${repoName}/to-do-list`} />}
+          />
+          <Route
+            path={`/${repoName}`}
+            element={<Navigate to={`/${repoName}/to-do-list`} />}
+          />
+          <Route path={`${repoName}/to-do-list`} element={<ToDoList />} />
+          <Route path={`${repoName}/calculator`} element={<Calculator />} />
           <Route path="*" element={<h2>No app here</h2>} />
         </Routes>
 
