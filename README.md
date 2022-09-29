@@ -6,7 +6,7 @@ A simple to do list with an option change to a calculator. The planned functiona
 
 ### Manual
 
-Note: You will need [Node Package Manager (NPM)](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) [Node.js](https://nodejs.org/en/) v16.16.0 to run this app.
+Note: You will need [Node Package Manager (NPM)](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and [Node.js](https://nodejs.org/en/) to run this app. Node.js v16.16.0 or higher is recommended.
 
 First install the react library to the project directory with the command:
 
